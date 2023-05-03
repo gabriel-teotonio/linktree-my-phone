@@ -1,0 +1,73 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Poppins, 'sans-serif';
+}
+
+a{
+    color: currentColor;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.main-app{
+    background-image: url("../imgs/bg-will.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-app header{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.infos-date{
+    text-align: center;
+}
+
+.infos-date .time{
+    font-size: 96px;
+    font-weight: 600;   
+}
+.infos-date .date{
+    font-weight: 500;
+    margin-top: -1rem;
+}
+
+.link-list{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.link-list .link-item{
+    padding: 10px;
+    background-color: rgba(45, 58, 91, 0.51);
+    border-radius: 6px;
+}
+
+.link-list .link-item a{
+    display: flex;
+    gap: 1rem;
+}
+
+.main-app footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
