@@ -1,4 +1,11 @@
 
+:root{
+    --color-blue_transparent: rgba(45, 58, 91, 0.51);
+    --color-darkBlue_transparent: rgba(2, 4, 10, 0.25);
+    --color-text_secundary:rgba(176, 182, 197, 1);
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -38,13 +45,28 @@ ul{
     text-align: center;
 }
 
-.infos-date .time{
+.infos-date .clock{
     font-size: 96px;
     font-weight: 600;   
 }
-.infos-date .date{
+.infos-date .local-date{
     font-weight: 500;
     margin-top: -1rem;
+}
+
+.prev-icons{
+    display: flex;
+    gap: .4rem;
+    background-color: var(--color-blue_transparent);
+    width: fit-content;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+}
+
+.prev-icons img{
+    width: 1rem;
 }
 
 .link-list{
@@ -53,17 +75,36 @@ ul{
     gap: 4px;
     width: 100%;
     margin-top: 2rem;
+    transform: scale(.8) translateY(-50%);
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) .7s;
+    opacity: 0;
+}
+
+.link-list.show{
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 
 .link-list .link-item{
     padding: 10px;
-    background-color: rgba(45, 58, 91, 0.51);
+    background-color: var(--color-darkBlue_transparent);
     border-radius: 6px;
+}
+
+.link-list .link-item:first-child{
+    border-radius: 1rem 1rem 0 0;
+}
+.link-list .link-item:last-child{
+    border-radius: 0 0 1rem 1rem;
 }
 
 .link-list .link-item a{
     display: flex;
     gap: 1rem;
+}
+
+.link-item .link-content_comment{
+    color: var(--color-text_secundary);
 }
 
 .main-app footer{
