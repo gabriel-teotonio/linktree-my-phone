@@ -3,6 +3,9 @@ const prevIcons = document.querySelector('.prev-icons')
 const date = new Date()
 const daysWeek = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
 
+const logoDev = document.querySelector(".logo-dev")
+const colors = ["green", "blue", "yellow", "orange", "purple"]
+
 window.addEventListener('load', () => {
     setTimeout(() => {
         linkList.classList.add('show')
@@ -28,4 +31,22 @@ const renderDateTime = () => {
 
 const addZeroToTime = (num) => num < 10 ? `0${num}`: num
 
+
+function loop() {
+  const hRange = window.innerWidth - logoDev.clientWidth
+  const vRange = window.innerHeight - logoDev.clientHeight
+  const time = performance.now() * 0.1
+
+  const x = Math.abs((time % (hRange * 2)) - hRange)
+  logoDev.style.left = `${x}px`
+  const y = Math.abs((time % (vRange * 2)) - vRange)
+  logoDev.style.top = `${y}px`
+
+  const bounces = Math.floor(time / hRange) + Math.floor(time / vRange)
+  logoDev.style.fill = colors[bounces % colors.length]
+
+  requestAnimationFrame(loop)
+}
+
+loop()
 renderDateTime()
